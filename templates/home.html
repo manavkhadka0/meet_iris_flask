@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static',filename='./css/home.css')}}"
+    />
+    <title>Iris Classification</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Iris Classification</h1>
+
+      <a href="#">See the model info here</a>
+
+      <form class="form" method="POST" action="{{url_for('pred')}}">
+        <div class="form-item">
+          <p>Sepal Length</p>
+          <input
+            type="number"
+            name="SL"
+            step="0.01"
+            placeholder="Sepal
+          Length"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <p>Sepal Width</p>
+          <input
+            type="number"
+            name="SW"
+            step="0.01"
+            placeholder="Sepal
+          Width"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <p>Petal Length</p>
+          <input
+            type="number"
+            name="PL"
+            step="0.01"
+            placeholder="Petal
+          Length"
+            required
+          />
+        </div>
+        <div class="form-item">
+          <p>Petal Width</p>
+          <input
+            type="number"
+            name="PW"
+            step="0.01"
+            placeholder="Petal
+          Width"
+            required
+          />
+        </div>
+
+        <button type="submit">Predict!</button>
+      </form>
+    </div>
+  </body>
+</html>
