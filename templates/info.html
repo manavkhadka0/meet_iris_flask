@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <title>Information</title>
+  </head>
+  <body>
+    <div class="d-flex align-items-center justify-content-center mt-3">
+      <div class="card" style="width: 20rem">
+        <div class="card-body">
+          <h5 class="card-title">Info of Model</h5>
+          <h6 class="card-title">Accuracy:</h6>
+          <p class="card-text">{{acc}}</p>
+
+          <h6 class="card-title">Setosa:</h6>
+
+          {% for key,value in set_info.items() %}
+          <p class="card-text">{{key}}: {{value}}</p>
+          {% endfor %}
+          <!-- <p class="card-text">Precision:</p>
+          <p class="card-text">Recall:</p>
+          <p class="card-text">F1 Score:</p> -->
+
+          <h6 class="card-title">Confusion Matrix:</h6>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Setosa</th>
+                <th>Versicolor</th>
+                <th>Virginica</th>
+              </tr>
+            </thead>
+
+            {% for numbers in confusion %}
+            <tr>
+              {% for number in numbers %}
+              <td>{{number}}</td>
+              {% endfor %}
+            </tr>
+            {% endfor %}
+          </table>
+
+          <a href="/" class="btn btn-primary">Go to Predicting!</a>
+        </div>
+      </div>
+
+      <div class="m-10">
+        <img
+          src="../static/images/tree.png"
+          class="img-thumnail rounded"
+          style="width: 800px; height: 80vh"
+        />
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
+</html>
